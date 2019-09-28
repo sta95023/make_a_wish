@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View Job</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-primary fixed-top bg-primary">
+            <h3 class="navbar-brand text-light">Hello {{user_firstname}}! Your Wish has been Granted! </h3>
+            <a class="navbar-brand text-light" href="/wishes">The Wishing App</a>
+            <a class="navbar-brand text-light" href="/logout">Log Out</a>
+        </nav>
+        <form action="/wishes" method="post"> {% csrf_token %}
+        <div class="row mt-5">
+            <div class="col mt-5">
+                {% for w in wish %}
+                <h3> {{w.thing}} </h3><br>
+                <p> {{w.description}} </p>
+                <p>Posted by: {{w.posted_by.first_name}} </p>
+                <p>Posted on: {{w.created_at}} </p>
+                <p>Granted on: {{w.updated_at}} </p>
+                {%endfor%}
+                <button class="text-center btn btn-success" type="submit" name="Wish Granted!!!">Wish Granted!!!</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

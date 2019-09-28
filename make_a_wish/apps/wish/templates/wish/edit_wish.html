@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Job</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+        <div class="container">
+                <nav class="navbar navbar-expand navbar-primary fixed-top bg-primary">
+                    <h3 class="navbar-brand text-light">Hello {{user_firstname}}! Let's edit your Job!</h3>
+                    <a class="navbar-brand text-light" href="/logout">Log Out</a>
+                </nav>
+                <div class="row mt-5">
+                    <div class="col mt-5">
+                        <form action="/edit/update" method="POST"> {% csrf_token %}
+                        <input type="hidden" name="bob" value="{{wish.id}}">
+                        <h5>Title: <input type="text" value=" {{wish.thing}} " name="wish_thing" id="wish_thing"></h5>
+                        <h5>Description: <input type="text" value=" {{wish.description}} " name="wish_description" id="wish_description"></h5>
+                        <button class="text-center btn btn-light" type="cancel" name="Cancel">Cancel</button> <button class="text-center btn btn-primary" type="submit" name="Edit">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
