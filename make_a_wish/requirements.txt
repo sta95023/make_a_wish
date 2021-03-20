@@ -1,7 +1,7 @@
 bcrypt==3.1.7
 cffi==1.12.3
 Django==1.10
-Jinja2==2.10.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 py3dns==3.2.1
 pycparser==2.19
