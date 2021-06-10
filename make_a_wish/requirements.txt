@@ -1,6 +1,6 @@
 bcrypt==3.1.7
 cffi==1.12.3
-Django==1.10
+Django==2.2.24
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 py3dns==3.2.1
